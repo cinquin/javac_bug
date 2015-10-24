@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+mkdir -p bin
+javac -cp lib/asm-debug-all-5.0.2.jar -d bin src/VisitBytecode.java
+javac -d bin src/ReproduceJavacBug.java
+java -cp bin:lib/asm-debug-all-5.0.2.jar VisitBytecode bin/ReproduceJavacBug.class CopiedClass.class
