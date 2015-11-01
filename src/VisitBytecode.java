@@ -54,10 +54,10 @@ public class VisitBytecode {
 		PrintWriter printWriter = new PrintWriter(System.out);
 		TraceClassVisitor traceClassVisitor = new TraceClassVisitor(printWriter);
 		MyClassVisitor myClassVisitor = new MyClassVisitor(traceClassVisitor);
-		cr.accept(myClassVisitor, ClassReader.EXPAND_FRAMES);
+		cr.accept(myClassVisitor, 0);
 
 		ClassWriter cw = new ClassWriter(0);
-		cr.accept(cw, ClassReader.EXPAND_FRAMES);
+		cr.accept(cw, 0);
 
 		FileOutputStream fos = new FileOutputStream(args[1]);
 		fos.write(cw.toByteArray());
