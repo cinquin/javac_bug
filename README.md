@@ -17,8 +17,8 @@ Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 42
 ``
 
 The bug results in an incorrect value of the `length` field in the `localvar_target`
-item (page 147 of the [Java Virtual Machine Specification, Java SE 8 edition](https://docs.oracle.com/javase/specs/jvms/se8/jvms8.pdf)
-). The value of the `length` field ends up exceeding the length of the method bytecode,
+item (page 147 of the [Java Virtual Machine Specification, Java SE 8 edition](https://docs.oracle.com/javase/specs/jvms/se8/jvms8.pdf)).
+The value of the `length` field ends up exceeding the length of the method bytecode,
 which trips up ASM because the `labels` array is pre-initialized based on that bytecode
 length. It appears that a combination of a type annotation and lambda code might be
 required to trigger the `javac` bug.
