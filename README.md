@@ -9,7 +9,7 @@ and is fixed in JDK 8u172.
 
 Stack traces of ASM exceptions caused by the bug include the following (ASM v5.0.2):
 
-``
+```
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 42
 	at org.objectweb.asm.ClassReader.readLabel(ClassReader.java:2174)
 	at org.objectweb.asm.ClassReader.readTypeAnnotations(ClassReader.java:1598)
@@ -17,7 +17,7 @@ Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 42
 	at org.objectweb.asm.ClassReader.readMethod(ClassReader.java:1017)
 	at org.objectweb.asm.ClassReader.accept(ClassReader.java:693)
 	at org.objectweb.asm.ClassReader.accept(ClassReader.java:506)
-``
+```
 
 The bug results in an incorrect value of the `length` field in the `localvar_target`
 item (page 147 of the [Java Virtual Machine Specification, Java SE 8 edition](https://docs.oracle.com/javase/specs/jvms/se8/jvms8.pdf)).
