@@ -4,7 +4,8 @@ but it causes the [ASM bytecode engineering library](http://asm.ow2.org) to fail
 of tools, such as Findbugs and JaCoCo, rely on ASM for bytecode analysis and thus also
 fail on affected bytecode.
 
-This is being investigated by Oracle as [OpenJDK bug 8144185](https://bugs.openjdk.java.net/browse/JDK-8144185).
+This was investigated by Oracle as [OpenJDK bug 8144185](https://bugs.openjdk.java.net/browse/JDK-8144185),
+and is fixed in JDK 8u172.
 
 Stack traces of ASM exceptions caused by the bug include the following (ASM v5.0.2):
 
